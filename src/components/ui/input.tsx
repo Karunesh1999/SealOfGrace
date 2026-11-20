@@ -11,15 +11,15 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="relative flex items-center w-full">
         {icon && (
-          <div className="absolute left-gutter-md text-on-surface-variant pointer-events-none flex items-center justify-center">
+          <div className="absolute left-3.5 text-muted-foreground pointer-events-none flex items-center justify-center">
             {icon}
           </div>
         )}
         <input
           type={type}
           className={cn(
-            "w-full rounded-DEFAULT border border-outline bg-surface py-gutter-md font-body text-body-md text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:ring-2 focus:ring-primary-container focus:outline-none transition-all",
-            icon ? "pl-11 pr-gutter-md" : "px-gutter-md",
+            "w-full rounded-xl border border-border bg-card py-2.5 font-body text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all shadow-2xs",
+            icon ? "pl-10 pr-3.5" : "px-3.5",
             className
           )}
           ref={ref}
@@ -39,7 +39,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <textarea
         className={cn(
-          "w-full rounded-DEFAULT border border-outline bg-surface px-gutter-md py-gutter-md font-body text-body-md text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:ring-2 focus:ring-primary-container focus:outline-none transition-all",
+          "w-full rounded-xl border border-border bg-card px-3.5 py-2.5 font-body text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all shadow-2xs",
           className
         )}
         ref={ref}

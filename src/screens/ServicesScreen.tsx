@@ -45,8 +45,8 @@ export const ServicesScreen: React.FC = () => {
           placeholder="Search services or sacraments..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          icon={<Search className="w-4 h-4" />}
-          className="bg-card text-xs"
+          icon={<Search className="w-4 h-4 text-muted-foreground" />}
+          className="bg-card text-xs rounded-full h-11 pl-10 border-border shadow-xs"
         />
 
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
