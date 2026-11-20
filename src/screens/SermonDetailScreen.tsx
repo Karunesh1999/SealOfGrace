@@ -220,7 +220,7 @@ export const SermonDetailScreen: React.FC = () => {
           </p>
           <Link
             to="/booking?service=pastoral-counseling"
-            className="inline-flex items-center justify-center gap-1.5 py-2 px-4 rounded-full bg-cta text-cta-foreground font-label text-xs font-semibold hover:bg-destructive mt-1 shadow-xs"
+            className="inline-flex items-center justify-center gap-1.5 py-2 px-4 rounded-full bg-cta text-white font-label text-xs font-semibold hover:bg-cta/90 mt-1 shadow-xs"
           >
             <span>Request Pastoral Discussion</span>
           </Link>

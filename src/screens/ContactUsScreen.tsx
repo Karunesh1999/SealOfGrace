@@ -183,10 +183,10 @@ export const ContactUsScreen: React.FC = () => {
               <Button
                 type="submit"
                 variant="cta"
-                className="gap-2 text-xs font-semibold h-11 mt-1 shadow-md hover:bg-destructive transition-all"
+                className="gap-2 text-xs font-semibold h-11 mt-1 shadow-sm text-white hover:bg-cta/90 transition-all"
               >
-                <Send className="w-4 h-4" />
-                <span>Send Message to Pastors</span>
+                <Send className="w-4 h-4 text-white" />
+                <span className="text-white font-semibold">Send Message to Pastors</span>
               </Button>
             </>
           )}

@@ -129,7 +129,7 @@ export const AboutUsScreen: React.FC = () => {
             </Link>
             <Link
               to="/booking"
-              className="flex-1 inline-flex items-center justify-center py-2 px-3 rounded-full bg-cta text-cta-foreground font-label text-xs font-semibold hover:bg-destructive text-center"
+              className="flex-1 inline-flex items-center justify-center py-2 px-3 rounded-full bg-cta text-white font-label text-xs font-semibold hover:bg-cta/90 text-center shadow-xs"
             >
               Book Counseling
             </Link>

@@ -26,10 +26,10 @@
     --tertiary: 34 43% 58%;
     --tertiary-foreground: 36 21% 6%;
 
-    /* CTA / Destructive Crimson: #D90000 */
-    --destructive: 0 100% 42.5%;
+    /* CTA / Destructive: Modern Vibrant Crimson Red (Soft & Refined) */
+    --destructive: 354 82% 54%;
     --destructive-foreground: 0 0% 100%;
-    --cta: 0 100% 42.5%;
+    --cta: 354 82% 54%;
     --cta-foreground: 0 0% 100%;
 
     /* Container & State Colors */

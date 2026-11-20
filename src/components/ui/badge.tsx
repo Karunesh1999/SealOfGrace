@@ -7,9 +7,9 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-on-primary",
-        secondary: "bg-secondary text-on-secondary",
-        cta: "bg-cta text-on-cta shadow-sm",
+        default: "bg-primary text-white",
+        secondary: "bg-secondary text-white",
+        cta: "bg-cta text-white shadow-xs font-semibold",
         tertiary: "bg-tertiary text-on-tertiary",
         gold: "bg-gold-soft text-on-tertiary-container",
         outline: "border border-outline text-secondary",

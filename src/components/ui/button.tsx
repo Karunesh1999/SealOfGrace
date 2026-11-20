@@ -7,10 +7,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-primary text-on-primary hover:bg-primary/90 shadow-sm",
-        secondary: "bg-secondary text-on-secondary hover:bg-secondary/90",
-        tertiary: "bg-tertiary text-on-tertiary hover:bg-tertiary/90",
-        cta: "bg-cta text-on-cta hover:bg-cta/90 shadow-sm",
+        primary: "bg-primary text-white hover:bg-primary/90 shadow-sm",
+        secondary: "bg-secondary text-white hover:bg-secondary/90",
+        tertiary: "bg-tertiary text-white hover:bg-tertiary/90",
+        cta: "bg-cta text-white hover:bg-cta/90 shadow-sm font-semibold",
         outline: "border border-outline bg-surface text-secondary hover:bg-surface-container",
         ghost: "text-secondary hover:bg-surface-container-high/50",
         icon: "h-9 w-9 rounded-full bg-primary text-on-primary hover:bg-tertiary hover:text-on-tertiary p-0 flex items-center justify-center",

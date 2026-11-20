@@ -90,7 +90,7 @@ export const SermonsScreen: React.FC<SermonsScreenProps> = ({ onSelectSermon }) 
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
-                    <span className="px-2 py-0.5 rounded-full bg-cta text-cta-foreground text-[10px] font-bold uppercase tracking-wider">
+                    <span className="px-2 py-0.5 rounded-full bg-cta text-white text-[10px] font-bold uppercase tracking-wider">
                       Featured Message
                     </span>
                   </div>

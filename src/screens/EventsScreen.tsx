@@ -80,7 +80,7 @@ export const EventsScreen: React.FC = () => {
                     (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1000&q=80'
                   }}
                 />
-                <div className="absolute top-gutter-md right-gutter-md rounded-md bg-cta text-on-cta px-3 py-1 text-center shadow-md">
+                <div className="absolute top-gutter-md right-gutter-md rounded-md bg-cta text-white px-3 py-1 text-center shadow-md">
                   <span className="block font-title text-title-md font-bold tabular-nums leading-none">
                     {event.date.split(' ')[0]}
                   </span>

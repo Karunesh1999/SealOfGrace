@@ -137,7 +137,7 @@ export const ServicesScreen: React.FC = () => {
                   {svc.bookable && (
                     <button
                       onClick={() => navigate(`/booking?service=${svc.id}`)}
-                      className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-full bg-cta text-cta-foreground font-label text-xs font-semibold hover:bg-destructive shadow-xs transition-colors text-center"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-full bg-cta text-white font-label text-xs font-semibold hover:bg-cta/90 shadow-xs transition-colors text-center"
                     >
                       <Sparkles className="w-3 h-3" />
                       <span>Book Online</span>
