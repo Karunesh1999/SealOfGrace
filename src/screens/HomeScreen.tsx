@@ -263,19 +263,19 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       </section>
 
       {/* Media Gallery Preview */}
-      <section className="bg-primary text-primary-foreground px-page-margin py-section flex flex-col gap-gutter-lg">
+      <section className="px-page-margin py-6 flex flex-col gap-3 bg-background text-foreground">
         <div className="flex items-end justify-between gap-2">
           <div className="flex flex-col gap-0.5">
-            <span className="font-label text-label-sm text-gold-soft uppercase tracking-wider font-semibold">
+            <span className="font-label text-xs text-muted-foreground uppercase tracking-wider font-semibold">
               Our Memory
             </span>
-            <h2 className="font-headline text-headline-lg-mobile font-bold">
+            <h2 className="font-headline text-headline-md text-secondary font-bold">
               Media Gallery
             </h2>
           </div>
           <Link
             to="/gallery"
-            className="font-label text-label-sm text-gold-soft hover:underline font-semibold shrink-0"
+            className="font-label text-xs text-primary hover:underline font-semibold shrink-0"
           >
             Explore Now
           </Link>
@@ -286,7 +286,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <button
               key={photo.id}
               onClick={() => onSelectPhoto(photo)}
-              className="relative group rounded-lg overflow-hidden border border-white/10 active:scale-95 transition-transform"
+              className="relative group rounded-xl overflow-hidden border border-border shadow-xs active:scale-95 transition-transform"
             >
               <img
                 src={photo.image}
@@ -296,8 +296,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1000&q=80'
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
-                <span className="font-label text-[11px] text-white font-medium truncate">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-2.5">
+                <span className="font-label text-xs text-white font-medium truncate">
                   {photo.caption}
                 </span>
               </div>
