@@ -148,9 +148,6 @@ export const BookingScreen: React.FC = () => {
             <h2 className="font-headline text-base font-bold text-secondary">
               Select Ministry Service or Counseling
             </h2>
-            <p className="font-body text-xs text-muted-foreground">
-              Choose the spiritual engagement you would like to book with our pastoral team.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 gap-2.5">
@@ -164,21 +161,16 @@ export const BookingScreen: React.FC = () => {
                     : 'border-border bg-card hover:border-primary/40'
                 }`}
               >
-                <div className="flex items-start justify-between gap-2">
-                  <div className="flex flex-col gap-0.5">
-                    <span className="font-headline text-sm font-bold text-secondary">
-                      {svc.title}
-                    </span>
-                    <span className="font-body text-xs text-muted-foreground">
-                      {svc.tagline}
-                    </span>
-                  </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-headline text-sm font-bold text-secondary">
+                    {svc.title}
+                  </span>
                   <input
                     type="radio"
                     name="service"
                     checked={selectedServiceId === svc.id}
                     onChange={() => setSelectedServiceId(svc.id)}
-                    className="accent-primary w-4 h-4 mt-1"
+                    className="accent-primary w-4 h-4 shrink-0"
                   />
                 </div>
               </div>
