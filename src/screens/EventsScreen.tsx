@@ -108,10 +108,6 @@ export const EventsScreen: React.FC = () => {
                   {event.title}
                 </h3>
 
-                <p className="font-body text-xs text-on-surface-variant leading-relaxed">
-                  {event.description}
-                </p>
-
                 <div className="flex flex-col gap-1 text-on-surface-variant text-xs pt-2 border-t border-outline-variant/60">
                   <p className="flex items-center gap-2">
                     <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
