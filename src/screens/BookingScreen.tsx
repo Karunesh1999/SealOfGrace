@@ -210,9 +210,13 @@ export const BookingScreen: React.FC = () => {
             </div>
           </div>
 
-          <Button variant="cta" onClick={handleNextStep} className="mt-2 w-full gap-2">
+          <Button
+            variant="cta"
+            onClick={handleNextStep}
+            className="mt-2 w-full h-11 gap-2 rounded-full text-white font-semibold text-xs sm:text-sm shadow-sm flex items-center justify-center whitespace-nowrap"
+          >
             <span>Continue to Date & Time</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-white shrink-0" />
           </Button>
         </div>
       )}
@@ -287,13 +291,21 @@ export const BookingScreen: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 pt-2">
-            <Button variant="outline" onClick={() => setCurrentStep(1)} className="flex-1">
+          <div className="grid grid-cols-2 gap-3 pt-2">
+            <Button
+              variant="outline"
+              onClick={() => setCurrentStep(1)}
+              className="w-full h-11 rounded-full text-xs sm:text-sm font-semibold border-slate-300 text-slate-700 hover:bg-slate-100 flex items-center justify-center transition-colors"
+            >
               Back
             </Button>
-            <Button variant="cta" onClick={handleNextStep} className="flex-1 gap-1.5">
-              <span>Next: Your Details</span>
-              <ArrowRight className="w-4 h-4" />
+            <Button
+              variant="cta"
+              onClick={handleNextStep}
+              className="w-full h-11 gap-1.5 rounded-full text-white font-semibold text-xs sm:text-sm shadow-sm flex items-center justify-center whitespace-nowrap"
+            >
+              <span>Next: Details</span>
+              <ArrowRight className="w-4 h-4 text-white shrink-0" />
             </Button>
           </div>
         </div>
@@ -378,13 +390,21 @@ export const BookingScreen: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 pt-2">
-            <Button variant="outline" onClick={() => setCurrentStep(2)} className="flex-1">
+          <div className="grid grid-cols-2 gap-3 pt-2">
+            <Button
+              variant="outline"
+              onClick={() => setCurrentStep(2)}
+              className="w-full h-11 rounded-full text-xs sm:text-sm font-semibold border-slate-300 text-slate-700 hover:bg-slate-100 flex items-center justify-center transition-colors"
+            >
               Back
             </Button>
-            <Button variant="cta" onClick={handleNextStep} className="flex-1 gap-1.5">
-              <span>Review Summary</span>
-              <ArrowRight className="w-4 h-4" />
+            <Button
+              variant="cta"
+              onClick={handleNextStep}
+              className="w-full h-11 gap-1.5 rounded-full text-white font-semibold text-xs sm:text-sm shadow-sm flex items-center justify-center whitespace-nowrap"
+            >
+              <span>Review</span>
+              <ArrowRight className="w-4 h-4 text-white shrink-0" />
             </Button>
           </div>
         </div>
@@ -469,17 +489,21 @@ export const BookingScreen: React.FC = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-2 pt-2">
-            <Button variant="outline" onClick={() => setCurrentStep(3)} className="flex-1">
-              Modify
+          <div className="grid grid-cols-2 gap-3 pt-2">
+            <Button
+              variant="outline"
+              onClick={() => setCurrentStep(3)}
+              className="w-full h-11 rounded-full text-xs sm:text-sm font-semibold border-slate-300 text-slate-700 hover:bg-slate-100 flex items-center justify-center transition-colors"
+            >
+              Back
             </Button>
             <Button
               variant="cta"
               onClick={handleConfirmBooking}
-              className="flex-1 gap-1.5 text-xs shadow-md"
+              className="w-full h-11 gap-1.5 rounded-full text-white font-semibold text-xs sm:text-sm shadow-sm flex items-center justify-center whitespace-nowrap"
             >
               <span>Confirm & Book</span>
-              <CheckCircle className="w-4 h-4" />
+              <CheckCircle className="w-4 h-4 text-white shrink-0" />
             </Button>
           </div>
         </div>
