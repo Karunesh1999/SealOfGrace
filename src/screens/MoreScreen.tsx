@@ -49,8 +49,8 @@ export const MoreScreen: React.FC<MoreScreenProps> = ({ onOpenRadio }) => {
   return (
     <div className="flex flex-col gap-4 px-page-margin py-4 pb-24 bg-background text-foreground min-h-screen">
       {/* Live Radio Broadcast Card (Light & Simple) */}
-      <button
-        onClick={onOpenRadio}
+      <Link
+        to="/live"
         className="w-full flex items-center justify-between p-4 rounded-2xl bg-card border border-border shadow-xs hover:border-primary/50 transition-all text-left group"
       >
         <div className="flex items-center gap-3">
@@ -70,7 +70,7 @@ export const MoreScreen: React.FC<MoreScreenProps> = ({ onOpenRadio }) => {
           </div>
         </div>
         <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-      </button>
+      </Link>
 
       {/* Menu Sections */}
       {menuSections.map((section) => (

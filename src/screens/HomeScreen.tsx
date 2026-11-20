@@ -139,6 +139,16 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                     )}
                     <span>{event.location}</span>
                   </p>
+                  {event.id.includes('radio') && (
+                    <button
+                      type="button"
+                      onClick={onOpenRadio}
+                      className="mt-2 inline-flex items-center justify-center gap-1.5 w-full py-2 px-3 rounded-xl bg-primary/10 hover:bg-primary text-primary hover:text-white font-semibold text-xs transition-colors"
+                    >
+                      <Radio className="w-3.5 h-3.5" />
+                      <span>Tune In Live Radio</span>
+                    </button>
+                  )}
                 </div>
               </div>
             </Card>

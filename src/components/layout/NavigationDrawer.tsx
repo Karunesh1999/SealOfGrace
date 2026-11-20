@@ -100,11 +100,9 @@ export const NavigationDrawer: React.FC<NavigationDrawerProps> = ({
       {/* Main Page Content */}
       <div className="flex flex-col gap-4 px-page-margin py-4 pb-24">
         {/* Live Broadcast Pill */}
-        <button
-          onClick={() => {
-            onClose()
-            onOpenRadio()
-          }}
+        <Link
+          to="/live"
+          onClick={onClose}
           className="w-full flex items-center justify-between p-4 rounded-2xl bg-card border border-border shadow-xs hover:border-primary/50 transition-all text-left group"
         >
           <div className="flex items-center gap-3">
@@ -124,7 +122,7 @@ export const NavigationDrawer: React.FC<NavigationDrawerProps> = ({
             </div>
           </div>
           <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-        </button>
+        </Link>
 
         {/* Menu Sections */}
         {menuSections.map((section) => (

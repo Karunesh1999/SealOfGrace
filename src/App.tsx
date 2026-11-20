@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom'
 
 import { DesktopDeviceFrame } from '@/components/layout/DesktopDeviceFrame'
 import { RouteSync } from '@/components/layout/RouteSync'
@@ -24,6 +24,7 @@ import { SermonDetailScreen } from '@/screens/SermonDetailScreen'
 import { GalleryScreen } from '@/screens/GalleryScreen'
 import { ContactUsScreen } from '@/screens/ContactUsScreen'
 import { MoreScreen } from '@/screens/MoreScreen'
+import { LiveRadioScreen } from '@/screens/LiveRadioScreen'
 
 import { SermonItem, GalleryPhoto, MinistryItem } from '@/data/churchData'
 
@@ -37,6 +38,7 @@ function ScrollToTop() {
 }
 
 function AppLayout() {
+  const navigate = useNavigate()
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const [isRadioModalOpen, setIsRadioModalOpen] = useState(false)
   const [selectedSermon, setSelectedSermon] = useState<SermonItem | null>(null)
@@ -51,7 +53,7 @@ function AppLayout() {
       {/* Top App Bar */}
       <TopAppBar
         onOpenDrawer={() => setIsDrawerOpen(true)}
-        onOpenRadio={() => setIsRadioModalOpen(true)}
+        onOpenRadio={() => navigate('/live')}
       />
 
       {/* Routed Pages */}
@@ -61,7 +63,7 @@ function AppLayout() {
             path="/"
             element={
               <HomeScreen
-                onOpenRadio={() => setIsRadioModalOpen(true)}
+                onOpenRadio={() => navigate('/live')}
                 onSelectPhoto={setSelectedPhoto}
               />
             }
@@ -89,7 +91,9 @@ function AppLayout() {
           />
           <Route path="/portfolio" element={<Navigate to="/gallery" replace />} />
           <Route path="/contact" element={<ContactUsScreen />} />
-          <Route path="/more" element={<MoreScreen onOpenRadio={() => setIsRadioModalOpen(true)} />} />
+          <Route path="/live" element={<LiveRadioScreen />} />
+          <Route path="/radio" element={<Navigate to="/live" replace />} />
+          <Route path="/more" element={<MoreScreen onOpenRadio={() => navigate('/live')} />} />
           <Route path="/menu" element={<Navigate to="/more" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
@@ -102,10 +106,10 @@ function AppLayout() {
       <NavigationDrawer
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
-        onOpenRadio={() => setIsRadioModalOpen(true)}
+        onOpenRadio={() => navigate('/live')}
       />
 
-      {/* Live Broadcast / Radio Modal */}
+      {/* Live Broadcast / Radio Modal (kept clean as backup) */}
       <LiveRadioModal
         isOpen={isRadioModalOpen}
         onClose={() => setIsRadioModalOpen(false)}
