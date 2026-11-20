@@ -11,13 +11,6 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = () => {
   const location = useLocation()
   const path = location.pathname
 
-  const tabs = [
-    { path: '/', label: 'Home', icon: Home, matchExact: true },
-    { path: '/events', label: 'Events', icon: Calendar },
-    { path: '/sermons', label: 'Sermons', icon: PlayCircle },
-    { path: '/services', label: 'Services', icon: Sparkles },
-  ]
-
   const isMoreActive = [
     '/about',
     '/pastors',
@@ -27,58 +20,91 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = () => {
     '/ministries'
   ].some((prefix) => path.startsWith(prefix))
 
+  const leftTabs = [
+    { path: '/', label: 'Home', icon: Home, matchExact: true },
+    { path: '/events', label: 'Events', icon: Calendar },
+  ]
+
+  const centerTab = {
+    path: '/services',
+    label: 'Services',
+    icon: Sparkles
+  }
+
+  const rightTabs = [
+    { path: '/sermons', label: 'Sermons', icon: PlayCircle },
+    { path: '/more', label: 'More', icon: LayoutGrid },
+  ]
+
+  const isCenterActive = path.startsWith('/services')
+
+  const renderTab = (tab: { path: string; label: string; icon: any; matchExact?: boolean }) => {
+    const Icon = tab.icon
+    const isActive = tab.matchExact
+      ? path === '/' || path === '/home'
+      : (tab.path === '/more' ? (path === '/more' || isMoreActive) : path.startsWith(tab.path))
+
+    return (
+      <Link
+        key={tab.path}
+        to={tab.path}
+        className="flex flex-col items-center justify-center flex-1 h-full py-1 select-none active:scale-95 transition-transform"
+      >
+        {isActive ? (
+          <div className="flex flex-col items-center justify-center px-3.5 py-1 rounded-2xl bg-primary/10 text-primary transition-all">
+            <Icon className="w-5 h-5 stroke-[2.2]" />
+            <span className="font-label text-[11px] font-bold tracking-tight">
+              {tab.label}
+            </span>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center px-2 py-1 text-slate-500 hover:text-slate-900 transition-colors gap-0.5">
+            <Icon className="w-5 h-5 stroke-[1.75]" />
+            <span className="font-label text-[11px] font-medium tracking-tight">
+              {tab.label}
+            </span>
+          </div>
+        )}
+      </Link>
+    )
+  }
+
   return (
     <nav
       aria-label="Primary navigation"
-      className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/90 shadow-[0_-4px_16px_rgba(0,0,0,0.03)] select-none max-w-lg mx-auto"
+      className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/90 shadow-[0_-4px_20px_rgba(0,0,0,0.04)] select-none max-w-lg mx-auto overflow-visible"
     >
-      <div className="grid grid-cols-5 items-center h-16">
-        {tabs.map((tab) => {
-          const Icon = tab.icon
-          const isActive = tab.matchExact
-            ? path === '/' || path === '/home'
-            : path.startsWith(tab.path)
+      <div className="flex items-center justify-between h-16 px-1.5 relative overflow-visible">
+        {/* Left Tabs */}
+        {leftTabs.map(renderTab)}
 
-          return (
-            <Link
-              key={tab.path}
-              to={tab.path}
-              className={cn(
-                "flex flex-col items-center justify-center gap-1 py-1.5 h-full transition-colors active:scale-95",
-                isActive
-                  ? "text-primary font-bold"
-                  : "text-slate-500 hover:text-slate-900 font-medium"
-              )}
-            >
-              <div className="relative">
-                <Icon className={cn("w-5 h-5", isActive ? "stroke-[2.5]" : "stroke-[1.75]")} />
-                {isActive && (
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary" />
-                )}
-              </div>
-              <span className="font-label text-[11px] tracking-tight">{tab.label}</span>
-            </Link>
-          )
-        })}
-
-        {/* More button */}
+        {/* Center Elevated Floating Action Tab */}
         <Link
-          to="/more"
-          className={cn(
-            "flex flex-col items-center justify-center gap-1 py-1.5 h-full transition-colors active:scale-95",
-            path === '/more' || isMoreActive
-              ? "text-primary font-bold"
-              : "text-slate-500 hover:text-slate-900 font-medium"
-          )}
+          to={centerTab.path}
+          className="flex flex-col items-center justify-center flex-1 -mt-6 select-none relative z-10 active:scale-95 transition-transform"
         >
-          <div className="relative">
-            <LayoutGrid className={cn("w-5 h-5", (path === '/more' || isMoreActive) ? "stroke-[2.5]" : "stroke-[1.75]")} />
-            {(path === '/more' || isMoreActive) && (
-              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary" />
+          <div
+            className={cn(
+              "w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-[0_8px_20px_rgba(0,90,150,0.38)] border-4 border-white transition-all",
+              isCenterActive
+                ? "ring-2 ring-primary ring-offset-2 scale-105"
+                : "hover:scale-105"
             )}
+          >
+            <centerTab.icon className="w-6 h-6 text-white stroke-[2.2]" />
           </div>
-          <span className="font-label text-[11px] tracking-tight">More</span>
+          <span
+            className={cn(
+              "font-label text-[11px] tracking-tight mt-0.5",
+              isCenterActive ? "text-primary font-bold" : "text-slate-700 font-semibold"
+            )}
+          >
+            {centerTab.label}
+          </span>
         </Link>
+
+        {/* Right Tabs */}
+        {rightTabs.map(renderTab)}
       </div>
     </nav>
   )
