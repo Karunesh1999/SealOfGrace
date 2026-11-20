@@ -65,7 +65,7 @@ export interface ChurchServiceItem {
 export interface GalleryPhoto {
   id: string
   title: string
-  category: 'events' | 'choir' | 'children' | 'baptism'
+  category: 'events' | 'service' | 'children' | 'choir' | 'baptism' | 'media'
   image: string
   caption: string
 }
@@ -86,6 +86,8 @@ export const CHURCH_INFO = {
   covenantPrayersTime: "07:00 AM - 08:00 AM",
   youtubeChannel: "https://www.youtube.com/@sealofgraceinternationalch4314",
   facebookPage: "https://www.facebook.com/sealofgracebiblechurch",
+  logo: "/images/church/logo/logo-1.png",
+  logoAlt: "/images/church/logo/logo-2.png",
 }
 
 export const ANNUAL_THEME_DETAILS = {
@@ -173,7 +175,7 @@ export const CHURCH_SERVICES: ChurchServiceItem[] = [
     description: "Our primary weekly assembly where the congregation gathers for reverent worship, in-depth Scripture exposition, and fellowship.",
     fullDetails: "Join the SGBC family every Sunday morning for an uplifting encounter with God. Each service features choral praise, heartfelt prayer, Holy Communion on designated Sundays, and verse-by-verse biblical teaching designed to strengthen your faith and daily walk with God.",
     scripture: "Hebrews 10:25, Psalm 100:1-5",
-    image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/Ariel_Photos/service.jpg",
     bookable: true
   },
   {
@@ -187,7 +189,7 @@ export const CHURCH_SERVICES: ChurchServiceItem[] = [
     description: "One-on-one confidential counseling for marriage, emotional healing, spiritual deliverance, and life direction grounded in God's Word.",
     fullDetails: "Whether you are navigating marital challenges, grief, addiction, career choices, or spiritual dry seasons, our pastors provide compassionate, confidential, and prayerful biblical counsel to help you find clarity and restoration in Jesus Christ.",
     scripture: "Proverbs 11:14, Galatians 6:2",
-    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/About/abt_w.jpg",
     bookable: true
   },
   {
@@ -201,7 +203,7 @@ export const CHURCH_SERVICES: ChurchServiceItem[] = [
     description: "Start your week in victory through targeted warfare and supplication to align your days with God's prophetic purpose.",
     fullDetails: "Covenant Prayers gather faithful intercessors to bring families, church ministries, Tarkwa community, and Ghana before God's throne of grace. Experience supernatural breakthroughs as we pray according to biblical covenant promises.",
     scripture: "1 Thessalonians 5:17, James 5:16",
-    image: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/Ariel_Photos/prayer2.jpg",
     bookable: true
   },
   {
@@ -215,7 +217,7 @@ export const CHURCH_SERVICES: ChurchServiceItem[] = [
     description: "Broadcasting uncompromised Christ-centered teachings across Tarkwa, Prestea, and surrounding Western Region towns.",
     fullDetails: "Our weekly radio ministry reaches thousands of listeners in homes, hospitals, and transit. Tune in each Sunday morning before service for profound theological exposition, practical Christian living truths, and special listener prayer lines.",
     scripture: "Mark 16:15, Romans 10:14",
-    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/photos/radio2.png",
     bookable: false
   },
   {
@@ -229,7 +231,7 @@ export const CHURCH_SERVICES: ChurchServiceItem[] = [
     description: "Immersion baptism symbolizing death to sin and resurrection to new life in Christ for born-again believers.",
     fullDetails: "Following in the footsteps of Christ, our baptism services are accompanied by foundational discipleship classes covering salvation, the Holy Spirit, prayer, church fellowship, and holy living.",
     scripture: "Matthew 28:19, Romans 6:3-4",
-    image: "https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/baptism/bapA.jpeg",
     bookable: true
   },
   {
@@ -243,7 +245,7 @@ export const CHURCH_SERVICES: ChurchServiceItem[] = [
     description: "Covenant prayer dedicating newborns and infants to God, committing parents to raise them in the nurture of the Lord.",
     fullDetails: "We partner with parents in praying blessing, protection, and salvation over their children before the congregation, honoring biblical parental responsibility.",
     scripture: "1 Samuel 1:27-28, Luke 2:22",
-    image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/CHILDREN/cm.jpg",
     bookable: true
   }
 ]
@@ -257,7 +259,7 @@ export const EVENTS: EventItem[] = [
     time: "08:30 AM - 11:00 AM",
     location: "Main Church, Effuanta Rd.",
     description: "Join us as we minister the Word of God, share His truth, and transform lives through His grace and supernatural power.",
-    image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/Ariel_Photos/service.jpg",
     type: "weekly"
   },
   {
@@ -268,7 +270,7 @@ export const EVENTS: EventItem[] = [
     time: "07:00 AM - 08:00 AM",
     location: "Medeama Radio 92.9 FM",
     description: "Tune in live every Sunday morning across Tarkwa and Western Region for life-transforming biblical expositions.",
-    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/photos/radio2.png",
     type: "weekly"
   },
   {
@@ -279,7 +281,7 @@ export const EVENTS: EventItem[] = [
     time: "07:00 AM - 08:00 AM",
     location: "Main Church Sanctuary",
     description: "Join us in fervent prayer as we seek His power to break down every barrier and usher in divine breakthroughs.",
-    image: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/Ariel_Photos/prayer2.jpg",
     type: "weekly"
   }
 ]
@@ -300,7 +302,7 @@ export const MINISTRIES: MinistryItem[] = [
     description: "Guiding children to know Christ, memorize Scripture, and grow in love and godly character in a joyful, nurturing environment every Sunday.",
     meetingTime: "Sundays during main service (09:00 AM)",
     leader: "Ministry Teachers & Guardians",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/CHILDREN/cm.jpg",
     responsibilities: [
       "Sunday School Bible curriculum teaching",
       "Scripture memory verse training",
@@ -315,7 +317,7 @@ export const MINISTRIES: MinistryItem[] = [
     description: "Leading the congregation in Spirit-filled praise and worship, exalting the name of Jesus Christ through choral harmony, hymns, and sacred contemporary songs.",
     meetingTime: "Saturdays 04:30 PM & Sundays 07:30 AM",
     leader: "Music Director & Worship Team",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/CHOIR/cw.jpg",
     responsibilities: [
       "Vocal and instrumental rehearsals",
       "Leading congregational worship",
@@ -330,7 +332,7 @@ export const MINISTRIES: MinistryItem[] = [
     description: "Equipping young people and university students with sound doctrine, moral excellence, and leadership training to impact their campuses and communities.",
     meetingTime: "Bi-weekly Saturdays 03:00 PM",
     leader: "Youth Council",
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/MEDIA/m6.jpg",
     responsibilities: [
       "Campus evangelism and outreach",
       "Youth Bible discussions and symposiums",
@@ -345,7 +347,7 @@ export const MINISTRIES: MinistryItem[] = [
     description: "Taking the gospel out into streets, hospitals, schools, and villages, carrying the message of salvation through faith in Jesus Christ.",
     meetingTime: "Monthly Outreaches",
     leader: "Outreach Committee",
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s4.jpg",
     responsibilities: [
       "Tracts distribution and open-air meetings",
       "Hospital and prison visitation",
@@ -364,35 +366,35 @@ export const PASTORS: PastorItem[] = [
     phone: "+233 24 312 7438",
     email: "pastor.samuel@sealofgracebiblechurch.com",
     bio: "Meet our lead pastor, Samuel Koffie, a visionary leader born on the 4th of July. Raised as a Christian and embracing the ministry of the Holy Spirit, he serves faithfully as a minister and a Senior Manager in AAIL. Under his spiritual leadership, SGBC continues to point believers to the supremacy of Christ and biblical transformation.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+    image: "/images/church/Website_Photos/PASTORS_EXCLUSIVE/main_pastor.jpg"
   },
   {
     id: "sampson-cudjoe",
     name: "Sampson Cudjoe",
     role: "Pastor",
     bio: "Pastor Sampson Cudjoe oversees pastoral care and evangelism coordination. He is passionate about soul winning, biblical discipleship, and grounding new believers in grace.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+    image: "/images/church/Website_Photos/PASTORS_EXCLUSIVE/pst-sampson.jpg"
   },
   {
     id: "peter-andoh",
     name: "Peter Andoh",
     role: "Pastor",
     bio: "Pastor Peter Andoh is dedicated to prayer mobilization, counseling, and youth mentorship. He ministers extensively during Covenant Prayers and midweek services.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80"
+    image: "/images/church/Website_Photos/PASTORS_EXCLUSIVE/pst-peter.jpg"
   },
   {
     id: "charles-obeng-kwarteng",
     name: "Charles Obeng Kwarteng",
     role: "Pastor",
     bio: "Pastor Charles Obeng Kwarteng serves in family life counseling, church administration, and teaching scripture truth with clarity and pastoral warmth.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80"
+    image: "/images/church/Website_Photos/PASTORS_EXCLUSIVE/pst-charles2.jpg"
   },
   {
     id: "henry-kwofie-nyanzu",
     name: "Henry Kwofie Nyanzu",
     role: "Pastor",
     bio: "Pastor Henry Kwofie Nyanzu directs outreach and discipleship tracks, fostering spiritual growth and brotherly unity across the congregations.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
+    image: "/images/church/Website_Photos/PASTORS_EXCLUSIVE/pst-henry.jpg"
   }
 ]
 
@@ -404,7 +406,7 @@ export const SERMONS: SermonItem[] = [
     year: "2022",
     duration: "48 mins",
     category: "Faith & Favor",
-    image: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/SERMONS/walkingin.jpg",
     youtubeUrl: "https://www.youtube.com/@sealofgraceinternationalch4314",
     verses: "Psalm 5:12, Luke 2:52, Proverbs 3:3-4",
     description: "Discover what it truly means to experience supernatural divine endorsement and open doors through God's unmerited favor.",
@@ -421,7 +423,7 @@ export const SERMONS: SermonItem[] = [
     year: "2024",
     duration: "54 mins",
     category: "Spiritual Warfare",
-    image: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/SERMONS/overcomingthedevil.jpg",
     youtubeUrl: "https://www.youtube.com/@sealofgraceinternationalch4314",
     verses: "James 4:7, Ephesians 6:11-18, Revelation 12:11",
     description: "A profound breakdown of Christ's victory over the enemy and how believers wield the shield of faith and the sword of the Spirit.",
@@ -438,7 +440,7 @@ export const SERMONS: SermonItem[] = [
     year: "2022",
     duration: "42 mins",
     category: "Holy Living",
-    image: "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/SERMONS/freedomfromlust.jpg",
     youtubeUrl: "https://www.youtube.com/@sealofgraceinternationalch4314",
     verses: "Galatians 5:16, 1 John 2:16, 2 Timothy 2:22",
     description: "Biblical strategies and spiritual illumination to walk in purity, break soul ties, and live victoriously in the power of the Spirit.",
@@ -455,7 +457,7 @@ export const SERMONS: SermonItem[] = [
     year: "2024",
     duration: "61 mins",
     category: "Family & Relationships",
-    image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/church/Website_Photos/SERMONS/happyandholy.jpg",
     youtubeUrl: "https://www.youtube.com/@sealofgraceinternationalch4314",
     verses: "Ephesians 5:22-33, Hebrews 13:4, 1 Peter 3:7",
     description: "Guiding couples into covenant joy, mutual sacrifice, deep communication, and Christ-centered marital unity.",
@@ -469,45 +471,556 @@ export const SERMONS: SermonItem[] = [
 
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
   {
-    id: "gal-1",
-    title: "Sunday Worship Service",
+    id: "gal-events-1",
+    title: "Special Church Celebration Service",
     category: "events",
-    caption: "Service & Members",
-    image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1000&q=80"
+    caption: "Fellowship & Community Assembly",
+    image: "/images/church/Website_Photos/EVENT/e1.jpg"
   },
   {
-    id: "gal-2",
-    title: "Choir Ministry",
-    category: "choir",
-    caption: "Choir in Worship",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80"
+    id: "gal-events-2",
+    title: "Annual Harvest & Thanksgiving Meeting",
+    category: "events",
+    caption: "Joyful Celebration of God's Goodness",
+    image: "/images/church/Website_Photos/EVENT/e2.jpg"
   },
   {
-    id: "gal-3",
-    title: "Children Ministry",
+    id: "gal-events-3",
+    title: "Church Outreach & Community Ministry",
+    category: "events",
+    caption: "Sharing Christ in Tarkwa",
+    image: "/images/church/Website_Photos/EVENT/e3.jpg"
+  },
+  {
+    id: "gal-events-4",
+    title: "Congregational Evangelism Day",
+    category: "events",
+    caption: "Ministering the Word of Grace",
+    image: "/images/church/Website_Photos/EVENT/e4.jpg"
+  },
+  {
+    id: "gal-events-5",
+    title: "Youth & Young Adults Conference",
+    category: "events",
+    caption: "Empowering the Next Generation",
+    image: "/images/church/Website_Photos/EVENT/e5.jpg"
+  },
+  {
+    id: "gal-events-6",
+    title: "Leadership & Ministry Workshop",
+    category: "events",
+    caption: "Equipping Church Workers",
+    image: "/images/church/Website_Photos/EVENT/e6.jpg"
+  },
+  {
+    id: "gal-events-7",
+    title: "Church Marriage Covenant Blessings",
+    category: "events",
+    caption: "Celebrating Godly Families in Grace",
+    image: "/images/church/Website_Photos/EVENT/e7.jpg"
+  },
+  {
+    id: "gal-events-8",
+    title: "Open-Air Community Gospel Mission",
+    category: "events",
+    caption: "Taking the Good News to All",
+    image: "/images/church/Website_Photos/EVENT/e8.jpg"
+  },
+  {
+    id: "gal-events-9",
+    title: "Annual Praise & Worship Festivity",
+    category: "events",
+    caption: "Praising the Lord with One Voice",
+    image: "/images/church/Website_Photos/EVENT/e9.jpg"
+  },
+  {
+    id: "gal-events-10",
+    title: "Church Consecration & Prayer Summit",
+    category: "events",
+    caption: "Seeking Divine Direction & Speed",
+    image: "/images/church/Website_Photos/EVENT/e10.jpg"
+  },
+  {
+    id: "gal-service-1",
+    title: "Sunday Morning Sanctuary Assembly",
+    category: "service",
+    caption: "Congregation in Holy Reverence",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s1.jpg"
+  },
+  {
+    id: "gal-service-2",
+    title: "Worship & Praises in Sanctuary",
+    category: "service",
+    caption: "Entering His Gates with Thanksgiving",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s2.jpg"
+  },
+  {
+    id: "gal-service-3",
+    title: "Congregational Praise & Fellowship",
+    category: "service",
+    caption: "Rejoicing Together in the Lord",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s3.jpg"
+  },
+  {
+    id: "gal-service-4",
+    title: "Ministry of the Word Exposition",
+    category: "service",
+    caption: "Hearing Biblical Truth with Power",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s4.jpg"
+  },
+  {
+    id: "gal-service-5",
+    title: "Brothers & Sisters in Fellowship",
+    category: "service",
+    caption: "Love and Unity in Christ",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s5.jpg"
+  },
+  {
+    id: "gal-service-6",
+    title: "Reverent Devotion & Supplication",
+    category: "service",
+    caption: "Pastoral Prayer at the Sanctuary",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s6.jpg"
+  },
+  {
+    id: "gal-service-7",
+    title: "Sunday Service & Members in Worship",
+    category: "service",
+    caption: "Main Auditorium Congregation",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s7.jpg"
+  },
+  {
+    id: "gal-service-8",
+    title: "Sunday Worship & Word Gathering",
+    category: "service",
+    caption: "Faithful Saints Lifting Holy Hands",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s8.jpg"
+  },
+  {
+    id: "gal-service-9",
+    title: "Church Elders & Ministry Presbytery",
+    category: "service",
+    caption: "Shepherding the Flock of God",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s9.jpg"
+  },
+  {
+    id: "gal-service-10",
+    title: "Sanctuary Intercessory Assembly",
+    category: "service",
+    caption: "Standing in the Gap for the Nations",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s10.jpg"
+  },
+  {
+    id: "gal-service-11",
+    title: "Bible Study & Discipleship Class",
+    category: "service",
+    caption: "Growing in the Knowledge of Christ",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s11.jpg"
+  },
+  {
+    id: "gal-service-12",
+    title: "Sunday Divine Praise Celebration",
+    category: "service",
+    caption: "Exalting the King of Kings",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s12.jpg"
+  },
+  {
+    id: "gal-service-13",
+    title: "Joyful Congregation in Thanksgiving",
+    category: "service",
+    caption: "Giving Glory to God for His Faithfulness",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s13.jpg"
+  },
+  {
+    id: "gal-service-14",
+    title: "Pastoral Blessing for Congregation",
+    category: "service",
+    caption: "Anointing & Grace upon All Members",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s14.jpg"
+  },
+  {
+    id: "gal-service-15",
+    title: "Close of Sunday Divine Service",
+    category: "service",
+    caption: "Going Forth to Serve and Disciple",
+    image: "/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s15.jpg"
+  },
+  {
+    id: "gal-children-1",
+    title: "Sunday School Bible Stories",
     category: "children",
-    caption: "Joyful Sunday School",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80"
+    caption: "Teaching Biblical Truths Early",
+    image: "/images/church/Website_Photos/CHILDREN/cm.jpg"
   },
   {
-    id: "gal-4",
-    title: "Water Baptism",
+    id: "gal-children-2",
+    title: "Children Praise & Song Worship",
+    category: "children",
+    caption: "Joyful Young Believers Singing",
+    image: "/images/church/Website_Photos/CHILDREN/c1.jpg"
+  },
+  {
+    id: "gal-children-3",
+    title: "Scripture Memory Verse Training",
+    category: "children",
+    caption: "Hiding the Word in Young Hearts",
+    image: "/images/church/Website_Photos/CHILDREN/c2.jpg"
+  },
+  {
+    id: "gal-children-4",
+    title: "Joyful Sunday School Children",
+    category: "children",
+    caption: "Raising Godly Seed for the Kingdom",
+    image: "/images/church/Website_Photos/CHILDREN/c3.jpg"
+  },
+  {
+    id: "gal-children-5",
+    title: "Children's Biblical Drama & Crafts",
+    category: "children",
+    caption: "Creative Learning in the House of God",
+    image: "/images/church/Website_Photos/CHILDREN/c4.jpg"
+  },
+  {
+    id: "gal-children-6",
+    title: "Sunday School Young Disciples",
+    category: "children",
+    caption: "Nurturing Future Christian Leaders",
+    image: "/images/church/Website_Photos/CHILDREN/c5.jpg"
+  },
+  {
+    id: "gal-children-7",
+    title: "Children Fellowship & Bible Class",
+    category: "children",
+    caption: "Growing in Love, Faith and Obedience",
+    image: "/images/church/Website_Photos/CHILDREN/c6.jpg"
+  },
+  {
+    id: "gal-children-8",
+    title: "Children's Choir Vocal Ensemble",
+    category: "children",
+    caption: "Young Praisers Exalting Jesus",
+    image: "/images/church/Website_Photos/CHILDREN/c7.jpg"
+  },
+  {
+    id: "gal-children-9",
+    title: "Sunday School Teachers & Students",
+    category: "children",
+    caption: "Dedicated Mentorship and Guidance",
+    image: "/images/church/Website_Photos/CHILDREN/c8.jpg"
+  },
+  {
+    id: "gal-children-10",
+    title: "Young Believers Morning Assembly",
+    category: "children",
+    caption: "A Foundation Built on Christ the Rock",
+    image: "/images/church/Website_Photos/CHILDREN/c9.jpg"
+  },
+  {
+    id: "gal-children-11",
+    title: "Joyful Classroom Learning Time",
+    category: "children",
+    caption: "Understanding the Love of Jesus",
+    image: "/images/church/Website_Photos/CHILDREN/c10.jpg"
+  },
+  {
+    id: "gal-children-12",
+    title: "Creative Arts & Biblical Coloring",
+    category: "children",
+    caption: "Interactive Faith Formation",
+    image: "/images/church/Website_Photos/CHILDREN/c11.jpg"
+  },
+  {
+    id: "gal-children-13",
+    title: "Children Ministry Scripture Recital",
+    category: "children",
+    caption: "Speaking God's Truth with Confidence",
+    image: "/images/church/Website_Photos/CHILDREN/c12.jpg"
+  },
+  {
+    id: "gal-children-14",
+    title: "Young Christians Prayer Time",
+    category: "children",
+    caption: "Learning to Pray to God Daily",
+    image: "/images/church/Website_Photos/CHILDREN/c13.jpg"
+  },
+  {
+    id: "gal-children-15",
+    title: "Children Sunday School Graduation",
+    category: "children",
+    caption: "Advancing in Faith & Knowledge",
+    image: "/images/church/Website_Photos/CHILDREN/c14.jpg"
+  },
+  {
+    id: "gal-children-16",
+    title: "Children Ministry Team & Teachers",
+    category: "children",
+    caption: "Loving Guardians of the Kingdom",
+    image: "/images/church/Website_Photos/CHILDREN/c15.jpg"
+  },
+  {
+    id: "gal-choir-1",
+    title: "Sacred Choral Harmonies in Glory",
+    category: "choir",
+    caption: "Robed Singers in Reverent Praise",
+    image: "/images/church/Website_Photos/CHOIR/cw.jpg"
+  },
+  {
+    id: "gal-choir-2",
+    title: "Spiritual Worship Leaders & Ensemble",
+    category: "choir",
+    caption: "Leading the Congregation to God",
+    image: "/images/church/Website_Photos/CHOIR/c1.jpg"
+  },
+  {
+    id: "gal-choir-3",
+    title: "Choral Anthems & Traditional Hymns",
+    category: "choir",
+    caption: "Sacred Harmony in the Sanctuary",
+    image: "/images/church/Website_Photos/CHOIR/c2.jpg"
+  },
+  {
+    id: "gal-choir-4",
+    title: "Worship Team Instrumentalists",
+    category: "choir",
+    caption: "Lifting Praises on Keyboards & Guitars",
+    image: "/images/church/Website_Photos/CHOIR/c3.jpg"
+  },
+  {
+    id: "gal-choir-5",
+    title: "Choir Rehearsal & Vocal Training",
+    category: "choir",
+    caption: "Striving for Excellence in God's Praise",
+    image: "/images/church/Website_Photos/CHOIR/c4.jpg"
+  },
+  {
+    id: "gal-choir-6",
+    title: "Sunday Choral Ministration",
+    category: "choir",
+    caption: "Spiritual Songs and Heavenly Melody",
+    image: "/images/church/Website_Photos/CHOIR/c5.jpg"
+  },
+  {
+    id: "gal-choir-7",
+    title: "Choir Robed in Sacred Blue & White",
+    category: "choir",
+    caption: "Dedicated Vocalists in Ministry",
+    image: "/images/church/Website_Photos/CHOIR/c6.jpg"
+  },
+  {
+    id: "gal-choir-8",
+    title: "Anointed Praise Ministration",
+    category: "choir",
+    caption: "Breaking Barriers Through Worship",
+    image: "/images/church/Website_Photos/CHOIR/c7.jpg"
+  },
+  {
+    id: "gal-choir-9",
+    title: "Hymn Presentation & Choral Solos",
+    category: "choir",
+    caption: "Glorifying God with Heart and Voice",
+    image: "/images/church/Website_Photos/CHOIR/c8.jpg"
+  },
+  {
+    id: "gal-choir-10",
+    title: "Choir Festival in the Sanctuary",
+    category: "choir",
+    caption: "Annual Sacred Music Celebration",
+    image: "/images/church/Website_Photos/CHOIR/c9.jpg"
+  },
+  {
+    id: "gal-choir-11",
+    title: "Choir in Holy Worship Encounter",
+    category: "choir",
+    caption: "Atmosphere of Heaven on Earth",
+    image: "/images/church/Website_Photos/CHOIR/c10.jpg"
+  },
+  {
+    id: "gal-choir-12",
+    title: "Voices of Grace Choral Ensemble",
+    category: "choir",
+    caption: "United in Purpose and Melody",
+    image: "/images/church/Website_Photos/CHOIR/c11.jpg"
+  },
+  {
+    id: "gal-choir-13",
+    title: "Youth Choir Vocal Presentation",
+    category: "choir",
+    caption: "Inspiring Worship and Youth Ministry",
+    image: "/images/church/Website_Photos/CHOIR/c12.jpg"
+  },
+  {
+    id: "gal-choir-14",
+    title: "Consecrated Choir Praise Service",
+    category: "choir",
+    caption: "Offering a Sacrifice of Praise",
+    image: "/images/church/Website_Photos/CHOIR/c13.jpg"
+  },
+  {
+    id: "gal-choir-15",
+    title: "Worship Leaders Intercessory Team",
+    category: "choir",
+    caption: "Praying Before Sunday Ministration",
+    image: "/images/church/Website_Photos/CHOIR/c14.jpg"
+  },
+  {
+    id: "gal-choir-16",
+    title: "Adekese Robed Choral Celebration",
+    category: "choir",
+    caption: "Triumphant Music Ministry of SGBC",
+    image: "/images/church/Website_Photos/CHOIR/adekese.png"
+  },
+  {
+    id: "gal-baptism-1",
+    title: "Water Baptism Celebration",
     category: "baptism",
-    caption: "Baptism Service",
-    image: "https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1000&q=80"
+    caption: "Public Declaration of Faith in Jesus Christ",
+    image: "/images/church/Website_Photos/baptism/bapA.jpeg"
   },
   {
-    id: "gal-5",
-    title: "Covenant Prayers Gathering",
-    category: "events",
-    caption: "Covenant Prayers Intercession",
-    image: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=1000&q=80"
+    id: "gal-baptism-2",
+    title: "New Believers Immersion Service",
+    category: "baptism",
+    caption: "Buried with Christ in Baptism",
+    image: "/images/church/Website_Photos/baptism/bap1.jpeg"
   },
   {
-    id: "gal-6",
-    title: "Medeama FM 92.9 Live Recording",
-    category: "events",
-    caption: "Radio Broadcast",
-    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1000&q=80"
-  }
+    id: "gal-baptism-3",
+    title: "Baptismal Vows & Prayer of Blessing",
+    category: "baptism",
+    caption: "Pastoral Consecration at the Waters",
+    image: "/images/church/Website_Photos/baptism/bap2.jpeg"
+  },
+  {
+    id: "gal-baptism-4",
+    title: "Baptism Ceremony in the Waters",
+    category: "baptism",
+    caption: "Raised to Walk in Newness of Life",
+    image: "/images/church/Website_Photos/baptism/bap3.jpeg"
+  },
+  {
+    id: "gal-baptism-5",
+    title: "Baptized Believers Fellowship",
+    category: "baptism",
+    caption: "Welcoming New Converts into Church Family",
+    image: "/images/church/Website_Photos/baptism/bap4.jpeg"
+  },
+  {
+    id: "gal-baptism-6",
+    title: "Consecration of Baptism Candidates",
+    category: "baptism",
+    caption: "Declaring Jesus as Lord and Savior",
+    image: "/images/church/Website_Photos/baptism/bap5.jpeg"
+  },
+  {
+    id: "gal-baptism-7",
+    title: "Sacramental River Immersion",
+    category: "baptism",
+    caption: "Symbolizing Washing and Rebirth in Christ",
+    image: "/images/church/Website_Photos/baptism/bap6.jpeg"
+  },
+  {
+    id: "gal-baptism-8",
+    title: "Baptism Discipleship Gathering",
+    category: "baptism",
+    caption: "Foundations of the Christian Walk",
+    image: "/images/church/Website_Photos/baptism/bap7.jpeg"
+  },
+  {
+    id: "gal-baptism-9",
+    title: "Pastoral Blessing for New Believers",
+    category: "baptism",
+    caption: "Sealed by Grace for God's Kingdom",
+    image: "/images/church/Website_Photos/baptism/bap8.jpeg"
+  },
+  {
+    id: "gal-baptism-10",
+    title: "New Convert Baptism Certificate Day",
+    category: "baptism",
+    caption: "Milestone of Faith in Tarkwa",
+    image: "/images/church/Website_Photos/baptism/bap9.jpeg"
+  },
+  {
+    id: "gal-baptism-11",
+    title: "Baptismal Service Congregation",
+    category: "baptism",
+    caption: "Rejoicing Over Every Soul Won to Christ",
+    image: "/images/church/Website_Photos/baptism/bap10.jpeg"
+  },
+  {
+    id: "gal-baptism-12",
+    title: "Holy Water Baptism Ceremony",
+    category: "baptism",
+    caption: "Dead to Sin and Alive in Jesus Christ",
+    image: "/images/church/Website_Photos/baptism/bap11.jpeg"
+  },
+  {
+    id: "gal-media-1",
+    title: "Media Production & Sound Board",
+    category: "media",
+    caption: "Audio Engineering for the Sanctuary",
+    image: "/images/church/Website_Photos/MEDIA/m1.jpg"
+  },
+  {
+    id: "gal-media-2",
+    title: "Sanctuary Live Streaming Setup",
+    category: "media",
+    caption: "Taking the Word to Online Viewers",
+    image: "/images/church/Website_Photos/MEDIA/m2.jpg"
+  },
+  {
+    id: "gal-media-3",
+    title: "Audio Visual Technical Control",
+    category: "media",
+    caption: "Acoustic Balance & Clear Sound",
+    image: "/images/church/Website_Photos/MEDIA/m3.jpg"
+  },
+  {
+    id: "gal-media-4",
+    title: "Camera Feeds & Video Recording",
+    category: "media",
+    caption: "Capturing Every Sermon & Song",
+    image: "/images/church/Website_Photos/MEDIA/m4.jpg"
+  },
+  {
+    id: "gal-media-5",
+    title: "Projection & Scripture Display",
+    category: "media",
+    caption: "Displaying Hymns and Bible Verses",
+    image: "/images/church/Website_Photos/MEDIA/m5.jpg"
+  },
+  {
+    id: "gal-media-6",
+    title: "Sound Engineering Desk in Service",
+    category: "media",
+    caption: "Professional Audio for God's House",
+    image: "/images/church/Website_Photos/MEDIA/m6.jpg"
+  },
+  {
+    id: "gal-media-7",
+    title: "Sunday Broadcast Recording Unit",
+    category: "media",
+    caption: "Preparing Radio & Online Archives",
+    image: "/images/church/Website_Photos/MEDIA/m7.jpg"
+  },
+  {
+    id: "gal-media-8",
+    title: "Media Team Technical Support",
+    category: "media",
+    caption: "Serving Faithfully Behind the Scenes",
+    image: "/images/church/Website_Photos/MEDIA/m8.jpg"
+  },
+  {
+    id: "gal-media-9",
+    title: "Acoustic Monitoring & Levels Control",
+    category: "media",
+    caption: "Clear Sound Across All Speakers",
+    image: "/images/church/Website_Photos/MEDIA/m9.jpg"
+  },
+  {
+    id: "gal-media-10",
+    title: "Live Media Transmission Hub",
+    category: "media",
+    caption: "Broadcasting Sunday Glory Across Ghana",
+    image: "/images/church/Website_Photos/MEDIA/m10.jpg"
+  },
 ]

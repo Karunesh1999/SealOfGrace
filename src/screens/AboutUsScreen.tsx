@@ -25,6 +25,13 @@ export const AboutUsScreen: React.FC = () => {
         <h2 className="font-headline text-headline-lg-mobile text-secondary font-bold">
           Our History
         </h2>
+        <div className="w-full h-44 rounded-2xl overflow-hidden border border-border shadow-xs my-1 bg-slate-900">
+          <img
+            src="/images/church/Website_Photos/About/wide_about.jpg"
+            alt="Seal of Grace Bible Church History"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="flex flex-col gap-3 text-muted-foreground font-body text-body-md leading-relaxed text-pretty">
           <p>
             Seal of Grace Bible Church, headquartered in Tarkwa, Ghana, began in 2016 when a group of young believers, led by Samuel Koffie, sought clarity on key spiritual issues and desired to honor the movement of the Holy Spirit and biblical truth.

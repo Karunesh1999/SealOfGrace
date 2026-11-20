@@ -12,9 +12,11 @@ export const GalleryScreen: React.FC<GalleryScreenProps> = ({ onSelectPhoto }) =
   const categories = [
     { id: 'all', label: 'Show All' },
     { id: 'events', label: 'Events' },
+    { id: 'service', label: 'Service & Members' },
     { id: 'children', label: 'Children Ministry' },
     { id: 'choir', label: 'Choir' },
-    { id: 'baptism', label: 'Baptism' }
+    { id: 'baptism', label: 'Baptism' },
+    { id: 'media', label: 'Media' }
   ]
 
   const filteredPhotos = GALLERY_PHOTOS.filter((photo) => {

@@ -88,13 +88,16 @@ export const LiveRadioScreen: React.FC = () => {
             <span>ON THE AIR • {CHURCH_INFO.radioStation}</span>
           </div>
 
-          {/* Radio Waves Visualizer Icon */}
-          <div className="relative w-32 h-32 rounded-full bg-primary/10 border-4 border-tertiary flex items-center justify-center shadow-inner my-2">
-            <Radio className="w-14 h-14 text-primary" />
+          {/* Radio Waves Visualizer Icon / Album Art */}
+          <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-tertiary flex items-center justify-center shadow-md my-2 bg-slate-900">
+            <img
+              src="/images/church/Website_Photos/photos/radio2.png"
+              alt="Medeama FM 92.9 Radio Broadcast"
+              className="w-full h-full object-cover"
+            />
             {isPlaying && (
               <>
-                <div className="absolute inset-0 rounded-full border-2 border-cta animate-ping opacity-30 pointer-events-none" />
-                <div className="absolute -inset-2 rounded-full border border-primary/40 animate-pulse pointer-events-none" />
+                <div className="absolute inset-0 rounded-full border-4 border-cta animate-ping opacity-35 pointer-events-none" />
               </>
             )}
           </div>

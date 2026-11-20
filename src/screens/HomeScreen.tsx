@@ -292,7 +292,12 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         </div>
 
         <div className="grid grid-cols-2 gap-2.5">
-          {GALLERY_PHOTOS.slice(0, 4).map((photo) => (
+          {[
+            GALLERY_PHOTOS.find((p) => p.category === 'service') || GALLERY_PHOTOS[0],
+            GALLERY_PHOTOS.find((p) => p.category === 'choir') || GALLERY_PHOTOS[1],
+            GALLERY_PHOTOS.find((p) => p.category === 'children') || GALLERY_PHOTOS[2],
+            GALLERY_PHOTOS.find((p) => p.category === 'events') || GALLERY_PHOTOS[3],
+          ].map((photo) => (
             <button
               key={photo.id}
               onClick={() => onSelectPhoto(photo)}

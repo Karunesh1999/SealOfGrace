@@ -18,8 +18,12 @@ export const TopAppBar: React.FC<TopAppBarProps> = () => {
         to="/"
         className="flex items-center gap-2.5 text-left active:opacity-85 transition-opacity"
       >
-        <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 shadow-xs shrink-0">
-          <BookOpen className="w-4.5 h-4.5 text-primary" />
+        <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center border border-slate-200/80 shadow-xs shrink-0 overflow-hidden p-0.5">
+          <img
+            src="/images/church/logo/logo-1.png"
+            alt={CHURCH_INFO.name}
+            className="w-full h-full object-contain"
+          />
         </div>
         <div className="flex flex-col">
           <span className="font-headline text-[15px] font-bold text-slate-900 leading-tight tracking-wide">
