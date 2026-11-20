@@ -106,11 +106,7 @@ export const ServicesScreen: React.FC = () => {
               </div>
 
               <div className="p-4 flex flex-col gap-3">
-                <p className="font-body text-xs text-muted-foreground leading-relaxed">
-                  {svc.description}
-                </p>
-
-                <div className="flex flex-col gap-1.5 text-xs text-muted-foreground pt-1 border-t border-border/60">
+                <div className="flex flex-col gap-1.5 text-xs text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
                     <span className="font-medium text-foreground">{svc.schedule}</span>
