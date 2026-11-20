@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Home, Calendar, PlayCircle, Sparkles, LayoutGrid } from 'lucide-react'
+import { Home, Calendar, PlayCircle, Church, LayoutGrid } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface BottomNavBarProps {
@@ -28,7 +28,7 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = () => {
   const centerTab = {
     path: '/services',
     label: 'Services',
-    icon: Sparkles
+    icon: Church
   }
 
   const rightTabs = [

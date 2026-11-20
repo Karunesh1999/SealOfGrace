@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react'
-import { X, ChevronLeft, ChevronRight, Tag } from 'lucide-react'
+import { ArrowLeft, ChevronLeft, ChevronRight, Tag } from 'lucide-react'
 import { GALLERY_PHOTOS, GalleryPhoto } from '@/data/churchData'
 
 interface ImageLightboxModalProps {
@@ -88,14 +88,28 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/95 text-white flex flex-col justify-between animate-in fade-in duration-200 select-none overflow-hidden"
+      className="fixed inset-0 z-50 bg-black text-white flex flex-col justify-between animate-in fade-in duration-200 select-none overflow-hidden cursor-pointer"
       role="dialog"
       aria-modal="true"
+      onClick={onClose}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
       {/* Top Header Bar */}
-      <header className="w-full px-4 py-3 bg-gradient-to-b from-black/80 to-transparent flex items-center justify-between z-30 shrink-0">
+      <header
+        className="w-full px-4 py-3 bg-gradient-to-b from-black via-black/90 to-transparent flex items-center justify-between z-30 shrink-0"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Left Side: Back Icon */}
+        <button
+          onClick={onClose}
+          aria-label="Back to gallery"
+          className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 active:bg-white/35 text-white flex items-center justify-center transition-all border border-white/20 shadow-md cursor-pointer active:scale-95"
+        >
+          <ArrowLeft className="w-5 h-5" />
+        </button>
+
+        {/* Right Side: Category Badge & Counter */}
         <div className="flex items-center gap-2.5">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary text-white text-[11px] font-bold uppercase tracking-wider shadow-sm">
             <Tag className="w-3 h-3" />
@@ -105,14 +119,6 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
             {activeIndex >= 0 ? `${activeIndex + 1} of ${totalInCategory}` : ''}
           </span>
         </div>
-
-        <button
-          onClick={onClose}
-          aria-label="Close full screen viewer"
-          className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 active:bg-white/35 text-white flex items-center justify-center transition-colors border border-white/20 shadow-md cursor-pointer"
-        >
-          <X className="w-5 h-5" />
-        </button>
       </header>
 
       {/* Main Full-Screen Photo Stage */}
@@ -125,14 +131,17 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
               handlePrev()
             }}
             aria-label="Previous image in category"
-            className="absolute left-2.5 sm:left-4 z-40 w-11 h-11 rounded-full bg-black/60 hover:bg-black/85 text-white border border-white/25 flex items-center justify-center shadow-lg active:scale-90 transition-all backdrop-blur-sm cursor-pointer"
+            className="absolute left-2.5 sm:left-4 z-40 w-11 h-11 rounded-full bg-black/70 hover:bg-black text-white border border-white/25 flex items-center justify-center shadow-lg active:scale-90 transition-all backdrop-blur-sm cursor-pointer"
           >
             <ChevronLeft className="w-6 h-6 -ml-0.5" />
           </button>
         )}
 
         {/* Center Display Image */}
-        <div className="w-full h-full flex items-center justify-center p-2">
+        <div
+          className="w-full h-full flex items-center justify-center p-2 cursor-default"
+          onClick={(e) => e.stopPropagation()}
+        >
           <img
             key={currentPhoto.id}
             src={currentPhoto.image}
@@ -152,7 +161,7 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
               handleNext()
             }}
             aria-label="Next image in category"
-            className="absolute right-2.5 sm:right-4 z-40 w-11 h-11 rounded-full bg-black/60 hover:bg-black/85 text-white border border-white/25 flex items-center justify-center shadow-lg active:scale-90 transition-all backdrop-blur-sm cursor-pointer"
+            className="absolute right-2.5 sm:right-4 z-40 w-11 h-11 rounded-full bg-black/70 hover:bg-black text-white border border-white/25 flex items-center justify-center shadow-lg active:scale-90 transition-all backdrop-blur-sm cursor-pointer"
           >
             <ChevronRight className="w-6 h-6 -mr-0.5" />
           </button>
@@ -160,7 +169,10 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
       </main>
 
       {/* Bottom Information & Dot Progress Bar */}
-      <footer className="w-full px-4 pt-3 pb-5 bg-gradient-to-t from-black/90 via-black/70 to-transparent flex flex-col gap-2 z-30 shrink-0 text-center">
+      <footer
+        className="w-full px-4 pt-3 pb-5 bg-gradient-to-t from-black via-black/90 to-transparent flex flex-col gap-2 z-30 shrink-0 text-center cursor-default"
+        onClick={(e) => e.stopPropagation()}
+      >
         <h3 className="font-headline text-base font-bold text-white leading-tight">
           {currentPhoto.title}
         </h3>

@@ -4,7 +4,7 @@ import {
   Home,
   Info,
   Calendar,
-  Sparkles,
+  Church,
   Users,
   ShieldCheck,
   PlayCircle,
@@ -28,7 +28,7 @@ export const MoreScreen: React.FC<MoreScreenProps> = ({ onOpenRadio }) => {
       title: 'Worship & Services',
       items: [
         { path: '/', label: 'Home', icon: Home, desc: 'Announcements, themes & overview', color: 'bg-primary/10 text-primary' },
-        { path: '/services', label: 'Church Services', icon: Sparkles, desc: 'Sunday worship, prayers & sacraments', color: 'bg-amber-500/10 text-amber-600' },
+        { path: '/services', label: 'Church Services', icon: Church, desc: 'Sunday worship, prayers & sacraments', color: 'bg-amber-500/10 text-amber-600' },
         { path: '/booking', label: 'Book Appointment', icon: BookMarked, desc: 'Pastoral counseling & baby dedication', color: 'bg-rose-500/10 text-rose-600' },
         { path: '/events', label: 'Events & Calendar', icon: Calendar, desc: 'Weekly services & 2026 fasting schedule', color: 'bg-blue-500/10 text-blue-600' },
         { path: '/sermons', label: 'Sermons & Teachings', icon: PlayCircle, desc: 'Biblical audio messages & study notes', color: 'bg-emerald-500/10 text-emerald-600' },
