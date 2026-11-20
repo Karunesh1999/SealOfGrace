@@ -1,16 +1,14 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { BookOpen, Phone, Menu, Radio, Calendar } from 'lucide-react'
+import { BookOpen, Phone, Menu, Calendar } from 'lucide-react'
 import { CHURCH_INFO } from '@/data/churchData'
 
 interface TopAppBarProps {
-  onOpenDrawer: () => void
-  onOpenRadio: () => void
+  onOpenDrawer?: () => void
+  onOpenRadio?: () => void
 }
 
-export const TopAppBar: React.FC<TopAppBarProps> = ({
-  onOpenRadio,
-}) => {
+export const TopAppBar: React.FC<TopAppBarProps> = () => {
   const navigate = useNavigate()
 
   return (
@@ -44,18 +42,6 @@ export const TopAppBar: React.FC<TopAppBarProps> = ({
         >
           <Calendar className="w-3.5 h-3.5" />
           <span className="hidden xs:inline">Book</span>
-        </button>
-
-        {/* Live Radio Tune-in */}
-        <button
-          type="button"
-          onClick={onOpenRadio}
-          className="relative inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200/80 text-slate-800 text-[11px] font-semibold border border-slate-200 transition-colors"
-          title="Listen to Live Broadcast"
-        >
-          <span className="w-2 h-2 rounded-full bg-cta animate-pulse-live" />
-          <Radio className="w-3.5 h-3.5 text-primary" />
-          <span className="font-label">Live</span>
         </button>
 
         {/* Quick Phone Call */}
