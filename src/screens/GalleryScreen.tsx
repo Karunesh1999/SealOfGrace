@@ -22,17 +22,7 @@ export const GalleryScreen: React.FC<GalleryScreenProps> = ({ onSelectPhoto }) =
   })
 
   return (
-    <div className="flex flex-col gap-0 pb-20">
-      {/* Page Banner */}
-      <section className="bg-primary text-on-primary px-page-margin py-6 flex flex-col gap-1 shadow-sm">
-        <span className="font-label text-label-sm text-gold-soft uppercase tracking-wider font-semibold">
-          Home · Photo Gallery
-        </span>
-        <h1 className="font-display text-display-lg-mobile text-on-primary font-bold">
-          Our Gallery
-        </h1>
-      </section>
-
+    <div className="flex flex-col gap-0 pb-20 pt-2">
       {/* Category Filter Chips */}
       <section className="px-page-margin pt-4 pb-2 flex flex-col gap-2.5">
         <h2 className="font-headline text-headline-md text-secondary font-bold">

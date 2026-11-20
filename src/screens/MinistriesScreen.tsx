@@ -11,17 +11,7 @@ interface MinistriesScreenProps {
 
 export const MinistriesScreen: React.FC<MinistriesScreenProps> = ({ onSelectMinistry }) => {
   return (
-    <div className="flex flex-col gap-0 pb-20">
-      {/* Page Banner */}
-      <section className="bg-primary text-primary-foreground px-page-margin py-6 flex flex-col gap-1 shadow-sm">
-        <span className="font-label text-label-sm text-gold-soft uppercase tracking-wider font-semibold">
-          Home · Ministries
-        </span>
-        <h1 className="font-display text-display-lg-mobile font-bold">
-          Ministries
-        </h1>
-      </section>
-
+    <div className="flex flex-col gap-0 pb-20 pt-2">
       {/* Overview */}
       <section className="px-page-margin py-section flex flex-col gap-2">
         <h2 className="font-headline text-headline-lg-mobile text-secondary font-bold">

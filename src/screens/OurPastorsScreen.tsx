@@ -12,17 +12,7 @@ export const OurPastorsScreen: React.FC = () => {
   const presbyteryTeam = PASTORS.filter((p) => !p.isLead)
 
   return (
-    <div className="flex flex-col gap-0 pb-20">
-      {/* Page Banner */}
-      <section className="bg-primary text-primary-foreground px-page-margin py-6 flex flex-col gap-1 shadow-sm">
-        <span className="font-label text-label-sm text-gold-soft uppercase tracking-wider font-semibold">
-          Home · Our Pastors
-        </span>
-        <h1 className="font-display text-display-lg-mobile font-bold">
-          Our Pastors
-        </h1>
-      </section>
-
+    <div className="flex flex-col gap-0 pb-20 pt-2">
       {/* Lead Pastor Spotlight */}
       <section className="px-page-margin py-section flex flex-col gap-3">
         <div className="flex flex-col gap-0.5">
