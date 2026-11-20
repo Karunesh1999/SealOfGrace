@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background & Surface */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    /* Brand Primary: #005A96 */
+    --primary: 204 100% 29.4%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Brand Secondary: #001448 */
+    --secondary: 223 100% 14.1%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Brand Tertiary Gold: #C09867 */
+    --tertiary: 34 43% 58%;
+    --tertiary-foreground: 36 21% 6%;
+
+    /* CTA / Destructive Crimson: #D90000 */
+    --destructive: 0 100% 42.5%;
+    --destructive-foreground: 0 0% 100%;
+    --cta: 0 100% 42.5%;
+    --cta-foreground: 0 0% 100%;
+
+    /* Container & State Colors */
+    --primary-container: 220 100% 95%;
+    --primary-container-foreground: 223 100% 14%;
+
+    --secondary-container: 215 17% 84%;
+    --secondary-container-foreground: 227 100% 14%;
+
+    --tertiary-container: 38 48% 96%;
+    --tertiary-container-foreground: 34 30% 15%;
+
+    --gold-soft: 33 39% 83%;
+    --gold-soft-foreground: 34 30% 15%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 0 0% 34%;
+
+    --accent: 38 48% 96%;
+    --accent-foreground: 34 30% 15%;
+
+    --border: 218 25% 85%;
+    --input: 218 25% 85%;
+    --ring: 204 100% 29.4%;
+
+    --success: 152 69% 31%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 71% 6%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71% 6%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 204 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 223 100% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --tertiary: 34 43% 65%;
+    --tertiary-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --cta: 0 85% 55%;
+    --cta-foreground: 0 0% 100%;
+
+    --primary-container: 223 100% 22%;
+    --primary-container-foreground: 220 100% 95%;
+
+    --secondary-container: 223 60% 18%;
+    --secondary-container-foreground: 210 20% 98%;
+
+    --tertiary-container: 34 30% 18%;
+    --tertiary-container-foreground: 38 48% 96%;
+
+    --gold-soft: 34 30% 25%;
+    --gold-soft-foreground: 33 39% 90%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 223 47% 14%;
+    --accent-foreground: 210 20% 98%;
+
+    --border: 223 47% 16%;
+    --input: 223 47% 16%;
+    --ring: 204 100% 40%;
+
+    --success: 152 69% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+  }
+
+  * {
+    @apply border-border;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overscroll-behavior-y: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Hide scrollbars globally (Native Mobile App Behavior) */
+html, body, *, *::before, *::after {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse-live {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.15);
+  }
+}
+
+.animate-pulse-live {
+  animation: pulse-live 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
