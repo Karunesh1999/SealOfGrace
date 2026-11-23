@@ -9,7 +9,10 @@ import {
   Bookmark,
   Users,
   ExternalLink,
-  Sparkles
+  Sparkles,
+  Church,
+  HeartHandshake,
+  Flame
 } from 'lucide-react'
 import {
   CHURCH_INFO,
@@ -51,27 +54,94 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-2.5">
-          {CHURCH_SERVICES.slice(0, 4).map((svc) => (
-            <Link
-              key={svc.id}
-              to={`/services/${svc.id}`}
-              className="p-3.5 rounded-xl bg-card border border-border shadow-xs hover:border-primary/50 transition-all flex flex-col justify-between gap-2 active:scale-98"
-            >
-              <div className="flex flex-col gap-1">
-                <span className="font-label text-[10px] uppercase font-bold text-primary">
-                  {svc.category}
-                </span>
-                <h3 className="font-headline text-xs font-bold text-secondary line-clamp-2">
-                  {svc.title}
-                </h3>
-              </div>
-              <span className="font-label text-[11px] text-tertiary font-semibold inline-flex items-center gap-1">
-                <span>Details</span>
-                <ArrowRight className="w-3 h-3" />
-              </span>
-            </Link>
-          ))}
+        <div className="grid grid-cols-2 gap-3">
+          {CHURCH_SERVICES.slice(0, 4).map((svc) => {
+            const categoryMeta: Record<string, { label: string; icon: any; badgeClass: string; gradient: string }> = {
+              worship: {
+                label: 'Worship',
+                icon: Church,
+                badgeClass: 'bg-primary/95 text-white',
+                gradient: 'from-blue-950/85 via-black/30 to-transparent'
+              },
+              counseling: {
+                label: 'Counseling',
+                icon: HeartHandshake,
+                badgeClass: 'bg-rose-600/95 text-white',
+                gradient: 'from-rose-950/85 via-black/30 to-transparent'
+              },
+              prayer: {
+                label: 'Prayer',
+                icon: Flame,
+                badgeClass: 'bg-amber-600/95 text-white',
+                gradient: 'from-amber-950/85 via-black/30 to-transparent'
+              },
+              broadcast: {
+                label: 'Broadcast',
+                icon: Radio,
+                badgeClass: 'bg-emerald-600/95 text-white',
+                gradient: 'from-emerald-950/85 via-black/30 to-transparent'
+              }
+            }
+            const meta = categoryMeta[svc.category] || {
+              label: svc.category,
+              icon: Sparkles,
+              badgeClass: 'bg-primary/95 text-white',
+              gradient: 'from-slate-950/85 via-black/30 to-transparent'
+            }
+            const Icon = meta.icon
+
+            return (
+              <Link
+                key={svc.id}
+                to={`/services/${svc.id}`}
+                className="group flex flex-col rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-300 overflow-hidden active:scale-[0.98]"
+              >
+                {/* Image Header with smooth zoom & overlay */}
+                <div className="relative h-28 sm:h-32 w-full overflow-hidden bg-slate-900">
+                  <img
+                    src={svc.image}
+                    alt={svc.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/images/church/Website_Photos/CHURCH_SERVICE_&_MEMBERS/s1.jpg'
+                    }}
+                  />
+                  {/* Gradient Overlay for Contrast */}
+                  <div className={`absolute inset-0 bg-gradient-to-t ${meta.gradient}`} />
+
+                  {/* Top Category Badge */}
+                  <div className="absolute top-2 left-2 z-10">
+                    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase backdrop-blur-md shadow-xs ${meta.badgeClass}`}>
+                      <Icon className="w-2.5 h-2.5" />
+                      <span>{meta.label}</span>
+                    </span>
+                  </div>
+
+                  {/* Schedule Indicator */}
+                  {svc.schedule && (
+                    <div className="absolute bottom-1.5 left-2 right-2 z-10 flex items-center gap-1 text-[10px] text-white/95 font-medium truncate drop-shadow-sm">
+                      <Clock className="w-2.5 h-2.5 text-white/80 shrink-0" />
+                      <span className="truncate">{svc.schedule.split('(')[0].trim()}</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Card Body */}
+                <div className="p-3 flex flex-col flex-1 justify-between gap-2.5 bg-white">
+                  <h3 className="font-headline text-[13px] font-bold text-slate-800 group-hover:text-primary leading-snug line-clamp-2 transition-colors">
+                    {svc.title}
+                  </h3>
+
+                  <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-primary">
+                    <span className="text-[11px] font-bold group-hover:underline">Explore</span>
+                    <span className="w-5 h-5 rounded-full bg-primary/10 group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-all">
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </section>
 

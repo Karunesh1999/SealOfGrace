@@ -189,7 +189,7 @@ export const CHURCH_SERVICES: ChurchServiceItem[] = [
     description: "One-on-one confidential counseling for marriage, emotional healing, spiritual deliverance, and life direction grounded in God's Word.",
     fullDetails: "Whether you are navigating marital challenges, grief, addiction, career choices, or spiritual dry seasons, our pastors provide compassionate, confidential, and prayerful biblical counsel to help you find clarity and restoration in Jesus Christ.",
     scripture: "Proverbs 11:14, Galatians 6:2",
-    image: "/images/church/Website_Photos/About/abt_w.jpg",
+    image: "/images/church/Website_Photos/exec/samuelkoffie.jpg",
     bookable: true
   },
   {
