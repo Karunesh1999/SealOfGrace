@@ -8,7 +8,8 @@ import {
   Calendar,
   User,
   HeartHandshake,
-  ArrowRight
+  ArrowRight,
+  Phone
 } from 'lucide-react'
 import { SERMONS, SermonItem, CHURCH_INFO } from '@/data/churchData'
 import { Card } from '@/components/ui/card'
@@ -78,24 +79,33 @@ export const SermonsScreen: React.FC<SermonsScreenProps> = ({ onSelectSermon }) 
 
         <div className="grid grid-cols-1 gap-4">
           {filteredSermons.map((sermon, idx) => (
-            <Card key={sermon.id} className="overflow-hidden flex flex-col">
-              {idx === 0 && (
-                <div className="relative h-44 overflow-hidden bg-slate-900">
-                  <img
-                    src={sermon.image}
-                    alt={sermon.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1000&q=80'
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
-                    <span className="px-2 py-0.5 rounded-full bg-cta text-white text-[10px] font-bold uppercase tracking-wider">
+            <Card key={sermon.id} className="overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+              <div className="relative h-44 overflow-hidden bg-slate-900">
+                <img
+                  src={sermon.image}
+                  alt={sermon.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/images/church/Website_Photos/exec/samuelkoffie.jpg'
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex items-end justify-between p-3">
+                  {idx === 0 ? (
+                    <span className="px-2.5 py-0.5 rounded-full bg-cta text-white text-[10px] font-bold uppercase tracking-wider shadow-sm">
                       Featured Message
                     </span>
-                  </div>
+                  ) : (
+                    <span className="px-2.5 py-0.5 rounded-full bg-primary/90 text-white text-[10px] font-bold uppercase tracking-wider backdrop-blur-md shadow-sm">
+                      {sermon.category}
+                    </span>
+                  )}
+                  {sermon.duration && (
+                    <span className="px-2.5 py-0.5 rounded-full bg-black/60 text-white text-[10px] font-medium backdrop-blur-sm tabular-nums border border-white/10">
+                      {sermon.duration}
+                    </span>
+                  )}
                 </div>
-              )}
+              </div>
 
               <div className="p-4 flex flex-col gap-2">
                 <header className="flex flex-col gap-0.5">
@@ -108,14 +118,7 @@ export const SermonsScreen: React.FC<SermonsScreenProps> = ({ onSelectSermon }) 
                   >
                     {sermon.title}
                   </Link>
-                  <p className="font-body text-xs text-muted-foreground">
-                    Sermon By: {sermon.preacher} · {sermon.year}
-                  </p>
                 </header>
-
-                <p className="font-body text-xs text-muted-foreground line-clamp-2 leading-relaxed">
-                  {sermon.description}
-                </p>
 
                 {sermon.verses && (
                   <p className="font-body text-[11px] text-primary italic">
@@ -124,13 +127,15 @@ export const SermonsScreen: React.FC<SermonsScreenProps> = ({ onSelectSermon }) 
                 )}
 
                 <footer className="flex items-center justify-between pt-3 mt-1 border-t border-border/60">
-                  <button
-                    onClick={() => onSelectSermon(sermon)}
+                  <a
+                    href={sermon.youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 font-label text-xs font-semibold text-cta hover:text-destructive transition-colors"
                   >
                     <PlayCircle className="w-4 h-4 fill-current" />
-                    <span>Quick Audio</span>
-                  </button>
+                    <span>Play on YouTube</span>
+                  </a>
 
                   <Link
                     to={`/sermons/${sermon.id}`}
@@ -147,27 +152,41 @@ export const SermonsScreen: React.FC<SermonsScreenProps> = ({ onSelectSermon }) 
       </section>
 
       {/* Give Your Life to Christ Callout */}
-      <section className="bg-secondary text-secondary-foreground mx-page-margin my-3 p-5 rounded-2xl flex flex-col gap-3 shadow-md">
-        <div className="flex items-center gap-2">
-          <HeartHandshake className="w-6 h-6 text-tertiary shrink-0" />
-          <h2 className="font-headline text-lg text-secondary-foreground font-bold">
-            Want to give your life to Christ?
-          </h2>
+      <section className="relative overflow-hidden mx-page-margin my-5 p-5 rounded-2xl bg-gradient-to-br from-[#001448] via-[#00205b] to-[#001038] text-white shadow-xl border border-white/10 flex flex-col gap-4">
+        {/* Decorative background watermark */}
+        <HeartHandshake className="absolute -right-4 -bottom-4 w-32 h-32 text-white/[0.04] pointer-events-none rotate-12" />
+
+        <div className="flex items-start gap-3.5 relative z-10">
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-tertiary/30 to-tertiary/10 border border-tertiary/40 flex items-center justify-center text-tertiary shrink-0 shadow-sm mt-0.5">
+            <HeartHandshake className="w-6 h-6 stroke-[2.2]" />
+          </div>
+          <div className="flex flex-col gap-1">
+            <span className="font-label text-[10px] uppercase font-bold tracking-wider text-tertiary">
+              Spiritual Decision & Salvation
+            </span>
+            <h2 className="font-headline text-lg sm:text-xl text-white font-bold leading-snug">
+              Want to give your life to Christ?
+            </h2>
+          </div>
         </div>
-        <div className="flex flex-wrap items-center gap-3 pt-1">
-          <Button
-            variant="cta"
-            size="sm"
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 pt-2 border-t border-white/10 relative z-10">
+          <button
+            type="button"
             onClick={() => navigate('/booking?service=pastoral-counseling')}
-            className="text-xs"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-cta hover:bg-cta/90 text-white font-label text-xs font-bold shadow-md active:scale-95 transition-all cursor-pointer"
           >
-            Start Your Journey
-          </Button>
+            <span>Start Your Journey</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+
           <a
             href={`tel:${CHURCH_INFO.phoneRaw}`}
-            className="font-label text-xs font-semibold text-tertiary tabular-nums hover:underline"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-label text-xs font-semibold border border-white/15 backdrop-blur-sm active:scale-95 transition-all"
           >
-            {CHURCH_INFO.phone}
+            <Phone className="w-3.5 h-3.5 text-tertiary" />
+            <span className="tabular-nums font-semibold">{CHURCH_INFO.phone}</span>
           </a>
         </div>
       </section>

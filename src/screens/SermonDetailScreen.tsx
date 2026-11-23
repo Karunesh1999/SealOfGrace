@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom'
 import {
   ArrowLeft,
   Play,
-  Pause,
   ExternalLink,
   BookOpen,
   Calendar,
@@ -18,8 +17,6 @@ import { Badge } from '@/components/ui/badge'
 
 export const SermonDetailScreen: React.FC = () => {
   const { id } = useParams<{ id: string }>()
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [progress, setProgress] = useState(25)
   const [shared, setShared] = useState(false)
 
   const sermon = SERMONS.find((s) => s.id === id) || SERMONS[0]
@@ -109,60 +106,26 @@ export const SermonDetailScreen: React.FC = () => {
           </span>
         </div>
 
-        {/* In-App Interactive Audio Player */}
-        <div className="rounded-2xl bg-card border border-border p-4 flex flex-col gap-3 shadow-md">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-cta animate-pulse" />
-              <span className="font-headline text-xs font-bold text-secondary">
-                Audio Message Stream
-              </span>
+        {/* Play on YouTube Video Banner */}
+        <div className="rounded-2xl bg-white border border-slate-200/90 p-3.5 sm:p-4 flex items-center justify-between shadow-xs hover:border-red-200 transition-colors gap-3">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-red-50 text-red-600 border border-red-100 flex items-center justify-center shrink-0 shadow-xs">
+              <Play className="w-5 h-5 fill-red-600 text-red-600 ml-0.5" />
             </div>
-            <span className="font-label text-xs text-muted-foreground tabular-nums">
-              {isPlaying ? '18:42' : '00:00'} / {sermon.duration}
+            <span className="font-headline text-base font-bold text-slate-900 leading-none">
+              Play on YouTube
             </span>
           </div>
 
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={isPlaying ? progress : 0}
-            onChange={(e) => setProgress(Number(e.target.value))}
-            aria-label="Audio progress slider"
-            className="w-full h-1.5 bg-muted rounded-lg appearance-none cursor-pointer accent-primary"
-          />
-
-          <div className="flex items-center justify-between pt-1">
-            <Button
-              variant={isPlaying ? 'secondary' : 'cta'}
-              size="sm"
-              onClick={() => setIsPlaying(!isPlaying)}
-              className="gap-2 text-xs h-9 px-4 shadow-sm"
-            >
-              {isPlaying ? (
-                <>
-                  <Pause className="w-4 h-4" />
-                  <span>Pause Sermon</span>
-                </>
-              ) : (
-                <>
-                  <Play className="w-4 h-4 fill-current" />
-                  <span>Play Sermon Audio</span>
-                </>
-              )}
-            </Button>
-
-            <a
-              href={sermon.youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-label text-xs text-primary hover:underline font-semibold"
-            >
-              <span>Watch on YouTube</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </div>
+          <a
+            href={sermon.youtubeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-red-600 hover:bg-red-700 text-white font-label text-xs font-bold shadow-xs active:scale-95 transition-all shrink-0 cursor-pointer"
+          >
+            <span>Watch Video</span>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
         </div>
 
         {/* Scripture Text */}

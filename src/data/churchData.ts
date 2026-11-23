@@ -407,7 +407,7 @@ export const SERMONS: SermonItem[] = [
     duration: "48 mins",
     category: "Faith & Favor",
     image: "/images/church/Website_Photos/SERMONS/walkingin.jpg",
-    youtubeUrl: "https://www.youtube.com/@sealofgraceinternationalch4314",
+    youtubeUrl: "https://www.youtube.com/watch?v=tTrUwLwRYvg",
     verses: "Psalm 5:12, Luke 2:52, Proverbs 3:3-4",
     description: "Discover what it truly means to experience supernatural divine endorsement and open doors through God's unmerited favor.",
     keyPoints: [
@@ -424,7 +424,7 @@ export const SERMONS: SermonItem[] = [
     duration: "54 mins",
     category: "Spiritual Warfare",
     image: "/images/church/Website_Photos/SERMONS/overcomingthedevil.jpg",
-    youtubeUrl: "https://www.youtube.com/@sealofgraceinternationalch4314",
+    youtubeUrl: "https://www.youtube.com/watch?v=be5O8I-pQBk",
     verses: "James 4:7, Ephesians 6:11-18, Revelation 12:11",
     description: "A profound breakdown of Christ's victory over the enemy and how believers wield the shield of faith and the sword of the Spirit.",
     keyPoints: [
@@ -441,7 +441,7 @@ export const SERMONS: SermonItem[] = [
     duration: "42 mins",
     category: "Holy Living",
     image: "/images/church/Website_Photos/SERMONS/freedomfromlust.jpg",
-    youtubeUrl: "https://www.youtube.com/@sealofgraceinternationalch4314",
+    youtubeUrl: "https://www.youtube.com/watch?v=QIjIvvHGJ9E",
     verses: "Galatians 5:16, 1 John 2:16, 2 Timothy 2:22",
     description: "Biblical strategies and spiritual illumination to walk in purity, break soul ties, and live victoriously in the power of the Spirit.",
     keyPoints: [
@@ -458,7 +458,7 @@ export const SERMONS: SermonItem[] = [
     duration: "61 mins",
     category: "Family & Relationships",
     image: "/images/church/Website_Photos/SERMONS/happyandholy.jpg",
-    youtubeUrl: "https://www.youtube.com/@sealofgraceinternationalch4314",
+    youtubeUrl: "https://www.youtube.com/watch?v=iIGzTrM1WMs",
     verses: "Ephesians 5:22-33, Hebrews 13:4, 1 Peter 3:7",
     description: "Guiding couples into covenant joy, mutual sacrifice, deep communication, and Christ-centered marital unity.",
     keyPoints: [
